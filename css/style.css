@@ -1,0 +1,427 @@
+@charset "utf-8";
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+    animation-duration: 0.5s;
+}
+@keyframes scale {
+    from{
+        transform: scale(0.7);
+        top: 50%;
+    }to{
+        transform: scale(1);
+        top: 50%;
+    }
+    
+}
+
+/* 배너 */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8vh 4.16vw;
+}
+.header svg{
+    fill: #fff;
+}
+.menus, .header .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu, .header .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.menu{
+    margin-right: 4.938vw;
+}
+.menu a{
+    margin-right: 30px;
+}
+.menu #m-logo{
+    display: none;
+}
+.menu svg{
+    height: 56.78px;
+}
+.menu span{
+    width: 1px;
+    height: 13.5px;
+    background-color: #fff;
+    margin-right: 30px;
+}
+.header .icon a{
+    margin-left: 1.937rem;
+    height: 1.75rem;
+}
+#hamburger{
+    display: block;
+    width: 28px;
+    height: 20px;
+    z-index: 999;
+    position: relative;
+}
+#hamburger span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+#hamburger span:first-child{
+    top: 0%;
+}
+#hamburger span:nth-child(2){
+    top: 50%;
+}
+#hamburger span:last-child{
+    top: 100%
+}
+
+
+/* 서브메뉴 */
+.menu-gallery-box{
+    width: 100%;
+    height: 100vh;
+    background-color: #002E7D;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    opacity: 0;
+    transition: .6s;
+}
+.menu-gallery-box.active{
+    z-index: 999;
+    opacity: 1;
+    position: fixed;
+}
+.menu-gallery{
+    display: flex;
+}
+.menu-gallery > li{
+    flex: 1;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    opacity: .5;
+}
+.menu-gallery > li::before{
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(180deg,rgba(0, 46, 125, 0.8),rgba(0, 46, 125, 0.7),rgba(0, 46, 125, 0.3),rgba(0, 46, 125, 0.1),rgba(0, 46, 125, 0));
+}
+.menu-gallery > li:hover{
+    flex: 2.5;
+    opacity: 1;
+}
+.menu-gallery > li:hover::before{
+    content: "";
+    opacity: 1;
+}
+.menu-gallery .brand1{
+    background: url(../img/brand6.jpg) no-repeat center;
+    background-size: cover;
+}
+.menu-gallery .brand2{
+    background: url(../img/starwars.webp) no-repeat center;
+    background-size: cover;
+}
+.menu-gallery .brand3{
+    background: url(../img/marvel.jpg) no-repeat center;
+    background-size: cover;
+}
+.menu-gallery .brand4{
+    background: url(../img/pixar.jpg) no-repeat center;
+    background-size: cover;
+}
+.menu-gallery .brand5{
+    background: url(../img/disney.jpg) no-repeat center;
+    background-size: cover;
+}
+.menu-gallery .brand6{
+    background: url(../img/barnd1.jpg) no-repeat center;
+    background-size: cover;
+}
+.content{
+    position: absolute;
+    bottom: -100%;
+    
+    transition: 0.3s;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.brand5 .content .logo, .brand3 .content .logo{
+    height: auto;
+    width: 150px;
+}
+.brand4 .content .logo{
+    height: auto;
+    width: 198px;
+}
+.brand2 .content .logo{
+    height: auto;
+    width: 159px;
+}
+.content svg{
+    fill: #fff;
+}
+.content p{
+    color: #fff;
+    font-family: "cormorant-garamond", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.763rem;
+}
+.menu-gallery > li:hover .content{
+    bottom: -25%;
+}
+.menu-gallery .box{
+    width: 8vw;
+    height: 100vh;
+}
+.box .sub{
+    width: 8vw;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+    right: 0;
+    padding: 80px 0;
+}
+.box .icons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.box .icons .icon a{
+    height: 1.75rem;
+}
+.box .icons .icon a svg{
+    fill: #8BA6E3;
+}
+.box .icons #hamburger span{
+    background-color: #8BA6E3;
+}
+.box .icons #hamburger{
+    top: 0%;
+}
+.box .icons .icon:last-child{
+    top: 0%;
+}
+.box .icons .icon:nth-child(2){
+    top: 50%;
+}
+.box .icons .icon:first-child{
+    top: 100%;
+}
+
+/* 메인 */
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh;
+}
+.middle .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.middle .main .vynil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.middle .main .vynil .img{
+    width: 30.468vw;
+    height: 39.351vh;
+   background: url(../img/vinyl.png) no-repeat center;
+   background-size: contain;
+}
+.middle .main h1{
+    font-family: "cormorant-garamond", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+.middle .main p{
+    font-family: "mgothic-210", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #B3B3B3;
+}
+.middle .main .vynil .text{
+    text-align: center;
+    margin-top: 40px;
+}
+.middle .main .vynil h1{
+    font-size: 36px;
+    color: #fff;
+}
+.middle .main .more{
+    text-align: center;
+    margin-top: 6.574vh;
+}
+.middle .main .more h1{
+    font-size: 24px;
+    color: #D2E2ED;
+}
+
+.back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 117px;
+    height: 84px;
+    background-color: #58585835;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back .arrow{
+    width: 30px;
+    height: 35px;
+    background: url(../img/arrow.svg) no-repeat center;
+    background-size: cover;
+}
+.back span{
+    font-family: "mgothic-210", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #fff; 
+    margin-left: 2px;
+}
+.back:hover{
+    background-color: #58585877;
+}
+
+@media(max-width: 1400px){
+    .header {
+        padding: 7vh 4.16vw;
+    }
+    .menu svg{
+        height: 48px;
+    }
+    .menu {
+        margin-right: 35px;
+    }
+    .menu a{
+        margin-right: 30px;
+    }
+    .middle{
+        height: 68vh;
+    }
+    .middle .main .vynil .text {
+        margin-top: 27px;
+    }
+    .middle .main .more {
+        margin-top: 4vh;
+    }
+}
+@media(max-width: 1180px){
+    .middle .main .vynil .text {
+        margin-top: 0;
+    }
+    .middle .main .vynil h1 {
+        font-size: 32px;
+    }
+    .middle .main .more h1 {
+        font-size: 20px;
+    }
+    .back{
+        height: 62px;
+    }
+}
+@media(max-width: 768px){
+    .header {
+        padding: 60px 7vw;
+        padding-bottom: 0;
+    }
+    .menus .menu:last-child{
+        display: none;
+    }
+    .menu a #disney, .menu a #emporium{
+        display: none;
+    }
+    .menu a #disney svg, .menu a #emporium svg{
+        height: 0;
+    }
+    .menu #m-logo {
+        display: block;
+        width: 14vw;
+        height: 100%;
+    }
+    .header .icon #heart, .header .icon #search{
+        display: none;
+    }
+    .menu a {
+        margin-right: 0;
+    }
+    #hamburger {
+        width: 7.236vw;
+        height: 29px;
+    }
+    #hamburger span {
+        height: 3px;
+    }
+}
+@media(max-width:500px){
+    .header {
+        padding: 50px 7vw;
+        padding-bottom: 0;
+    }
+    #hamburger {
+        height: 18px;
+    }
+    #hamburger span {
+        height: 2px;
+    }
+    .middle {
+        height: 71vh;
+    }
+    .middle .main .vynil .img {
+        width: 82vw;
+    }
+    .middle .main .vynil h1 {
+        font-size: 20px;
+    }
+    .middle .main p {
+        font-size: 12px;
+    }
+    .back {
+        height: 44px;
+        width: 84px;
+    }
+    .back .arrow {
+        width: 20px;
+        height: 24px;
+    }
+    .back span{
+        font-size: 18px;
+    }
+}
